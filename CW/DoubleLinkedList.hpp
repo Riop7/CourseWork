@@ -439,48 +439,6 @@ DoubleLinkedList< T >& DoubleLinkedList< T >::operator=(DoubleLinkedList< T >&& 
 	return *this;
 }
 
-//std::ostream& operator<< (std::ostream& out, DoubleLinkedList& src) {
-//	src.outAll();
-//	return out;
-//}
-//
-//
-//bool DoubleLinkedList::operator==(const DoubleLinkedList& src) {
-//	if (count_ != src.count_)
-//		return false;
-//	Node* left = head_;
-//	Node* right = src.head_;
-//	while (left != nullptr && right != nullptr) {
-//		if (left->item_ == right->item_) {
-//			left = left->next_;
-//			right = right->next_;
-//		}
-//		else
-//			return false;
-//	}
-//	if (left == nullptr && right == nullptr)
-//		return true;
-//	else
-//		return false;
-//}
-//
-//void DoubleLinkedList::addList(DoubleLinkedList& src) {
-//  Node* x = src.head_;
-//  if (src.head_ != nullptr)
-//  {
-//		while (x != nullptr)
-//		{
-//			this->insertTail(x);
-//			x = x->next_;
-//		}
-//	}
-//	src.head_ = nullptr;
-//	src.tail_ = nullptr;
-//	src.count_ = 0;
-//}
-
-
 #endif
-//std::ostream& operator<< (std::ostream& out, DoubleLinkedList< T >& src);
 
 
