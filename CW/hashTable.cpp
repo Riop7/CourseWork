@@ -75,7 +75,10 @@ void HashTable::search(std::istream& in)
 void HashTable::deleteWord(std::istream& in)
 {
   std::string englishWord;
-  in >> englishWord;
+  do
+  {
+    getline(in, englishWord);
+  } while (!in.eof() && englishWord.empty());
   int index = getHash(englishWord);
   Word engWord(englishWord);
  
@@ -95,7 +98,7 @@ void HashTable::show(std::istream& in, std::ostream& out)
   do 
   {
     getline(in, englishWord);
-  } while (englishWord.empty());
+  } while (!in.eof() && englishWord.empty());
   Word engWord(englishWord);
   int index = getHash(englishWord);
   if (array_[index].searchItem(engWord))
