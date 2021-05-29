@@ -41,7 +41,6 @@ void HashTable::insert(std::istream& in)
       numOfCollsions_++;
       array_[index].insertHead(word);
     }
-    return;
   }
   else
   {

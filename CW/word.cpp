@@ -73,10 +73,7 @@ void Word::insertWord(std::istream& in)
     {
       throw std::invalid_argument("Invalid translation\n");
     }
-    //if (std::find(translations_.begin(), translations_.end(), translation) == translations_.end())
-    {
-       translations_.push_back(translation);
-    }
+    translations_.push_back(translation);
   }
   std::sort(translations_.begin(), translations_.end());
 }
