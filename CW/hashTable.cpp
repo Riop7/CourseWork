@@ -48,7 +48,7 @@ void HashTable::insert(std::istream& in)
   }
 }
 
-void HashTable::search(std::istream& in)
+void HashTable::search(std::istream& in, std::ostream& out)
 {
   std::string englishWord;
   do

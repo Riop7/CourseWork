@@ -59,7 +59,7 @@ void Word::insertWord(std::istream& in)
     }
     if (translation.empty())
     {
-      throw std::invalid_argument("Invalid translation\n");
+      throw std::invalid_argument("Invalid input\n");
     }
     if (sin.eof())
     {

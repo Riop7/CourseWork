@@ -43,13 +43,14 @@ int main()
       if (command == 1)
       {
         std::cout << "Enter english word and translation like this\n\n";
-        std::cout << "<english word>=<translation1>|<translation2>;\n";
+        std::cout << "<english word>=<translation1>|<translation2>\n";
         Dictionary.insert(std::cin);
       }
       else if (command == 2)
       {
         std::cout << "Enter english word for deletion\n";
         Dictionary.deleteWord(std::cin);
+        std::cout << "Successful deletion\n";
       }
       else if (command == 3)
       {
@@ -59,7 +60,7 @@ int main()
       else if (command == 4)
       {
         std::cout << "Enter english word\n";
-        Dictionary.search(std::cin);
+        Dictionary.search(std::cin, std::cout);
       }
       else if (command == 0)
       {
