@@ -17,10 +17,10 @@ int main()
   int command = 1;
   try
   {
-    //for (int i = 0; i < 5; i++)
-    //{
-    //  Dictionary.insert(in);
-    //}
+    for (int i = 0; i < 5; i++)
+    {
+      Dictionary.insert(in);
+    }
     std::cout << "Enter the command number\n"
       << "1 - insert the word in dictionary\n"
       << "2 - remove the word from dictionary\n"
@@ -54,7 +54,7 @@ int main()
       else if (command == 3)
       {
         std::cout << "Enter english word\n";
-        Dictionary.show(std::cin);
+        Dictionary.show(std::cin, std::cout);
       }
       else if (command == 4)
       {

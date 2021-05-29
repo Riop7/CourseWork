@@ -2,7 +2,7 @@
 #define WORD_H
 
 #include <vector>
-#include <iostream>
+#include <iosfwd>
 #include "DoubleLinkedList.hpp"
 
 class Word
@@ -13,7 +13,7 @@ public:
   void insertWord(std::istream& in);
   std::string getEnglishWord();
   std::vector< std::string >& getVect();
-  void show();
+  void show(std::ostream& out);
   void clear();
   bool operator==(const Word& rhs);
   bool operator!=(const Word& rhs);

@@ -13,7 +13,7 @@ public:
   void insert(std::istream& in);
   void search(std::istream& in);
   void deleteWord(std::istream& in);
-  void show(std::istream& in);
+  void show(std::istream& in, std::ostream& out);
 private:
   std::vector< DoubleLinkedList< Word > > array_;
   size_t tableSize_;

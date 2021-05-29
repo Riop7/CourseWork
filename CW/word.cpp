@@ -18,8 +18,10 @@ Word::Word(std::string englishWord):
 void Word::insertWord(std::istream& in)
 {
   std::string line;
-  in.clear();
-  getline(in, line);
+  do
+  {
+    getline(in, line);
+  } while (line.empty());
   std::stringstream sin(line);
   char my_or = '\0';
   char semicolon = '\0';
@@ -53,7 +55,7 @@ void Word::insertWord(std::istream& in)
       translation += current;
       current = sin.get();
     }
-    if (sin.fail() && current != ';')
+    if (translation.empty() || (sin.fail() && current != ';'))
     {
       throw std::invalid_argument("Invalid translation\n");
     }
@@ -87,9 +89,9 @@ std::vector<std::string>& Word::getVect()
   return translations_;
 }
 
-void Word::show()
+void Word::show(std::ostream& out)
 {
-  std::copy(translations_.begin(), translations_.end(), std::ostream_iterator< std::string >(std::cout, "\n"));
+  std::copy(translations_.begin(), translations_.end(), std::ostream_iterator< std::string >(out, " "));
 }
 
 void Word::clear()
