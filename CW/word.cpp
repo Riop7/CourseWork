@@ -33,7 +33,7 @@ void Word::insertWord(std::istream& in)
     englishWord_ += current;
     current = sin.get();
   } 
-  if (current != '=')
+  if (englishWord_.empty() || current != '=')
   {
     throw std::invalid_argument("Invalid input\n");
   }
