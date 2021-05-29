@@ -18,7 +18,7 @@
     <ClCompile Include="main.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
-    <ClCompile Include="hashTable.cpp">
+    <ClCompile Include="dictonary.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="DoubleLinkedList.cpp">
@@ -32,7 +32,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="hashTable.hpp">
+    <ClInclude Include="dictionary.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="DoubleLinkedList.hpp">

@@ -139,14 +139,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="hashTable.cpp" />
+    <ClCompile Include="dictonary.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="DoubleLinkedList.cpp" />
     <ClCompile Include="tools.cpp" />
     <ClCompile Include="word.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="hashTable.hpp" />
+    <ClInclude Include="dictionary.hpp" />
     <ClInclude Include="DoubleLinkedList.hpp" />
     <ClInclude Include="tools.h" />
     <ClInclude Include="word.h" />

@@ -6,10 +6,10 @@
 #include "word.h"
 #include "DoubleLinkedList.hpp"
 
-class HashTable
+class Dictionary
 {
 public:
-  HashTable(size_t size);
+  Dictionary(size_t size);
   void insert(std::istream& in);
   void search(std::istream& in, std::ostream& out);
   void deleteWord(std::istream& in);

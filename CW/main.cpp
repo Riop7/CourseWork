@@ -4,14 +4,14 @@
 
 #include "DoubleLinkedList.hpp"
 #include "word.h"
-#include "hashTable.hpp"
+#include "dictionary.hpp"
 
 int main()
 {
   int code = 0;
   setlocale(LC_ALL, "RUS");
   system("chcp 1251");
-  HashTable Dictionary(50);
+  Dictionary dictionary(50);
   std::ifstream in("input.txt");
 
   int command = 1;
@@ -19,7 +19,7 @@ int main()
   {
     for (int i = 0; i < 5; i++)
     {
-      Dictionary.insert(in);
+      dictionary.insert(in);
     }
     std::cout << "Enter the command number\n"
       << "1 - insert the word in dictionary\n"
@@ -44,23 +44,23 @@ int main()
       {
         std::cout << "Enter english word and translation like this\n\n";
         std::cout << "<english word>=<translation1>|<translation2>\n";
-        Dictionary.insert(std::cin);
+        dictionary.insert(std::cin);
       }
       else if (command == 2)
       {
         std::cout << "Enter english word for deletion\n";
-        Dictionary.deleteWord(std::cin);
+        dictionary.deleteWord(std::cin);
         std::cout << "Successful deletion\n";
       }
       else if (command == 3)
       {
         std::cout << "Enter english word\n";
-        Dictionary.show(std::cin, std::cout);
+        dictionary.show(std::cin, std::cout);
       }
       else if (command == 4)
       {
         std::cout << "Enter english word\n";
-        Dictionary.search(std::cin, std::cout);
+        dictionary.search(std::cin, std::cout);
       }
       else if (command == 0)
       {
@@ -82,5 +82,6 @@ int main()
     std::cerr << exc.what();
     code = 1;
   }
+  in.close();
   return code;
 }

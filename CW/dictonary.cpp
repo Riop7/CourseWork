@@ -1,10 +1,10 @@
-#include "hashTable.hpp"
+#include "dictionary.hpp"
 #include <string>
 
 #include "word.h"
 #include "tools.h"
 
-inline int HashTable::getHash(const std::string& englishWord)
+inline int Dictionary::getHash(const std::string& englishWord)
 {
   int hash = 0;
   for (size_t i = 0; i < englishWord.length(); i++)
@@ -15,7 +15,7 @@ inline int HashTable::getHash(const std::string& englishWord)
   return hash;
 }
 
-HashTable::HashTable(size_t size):
+Dictionary::Dictionary(size_t size):
   tableSize_(size),
   numOfCollsions_(0)
 {
@@ -25,7 +25,7 @@ HashTable::HashTable(size_t size):
   }
 }
 
-void HashTable::insert(std::istream& in)
+void Dictionary::insert(std::istream& in)
 {
   Word word;
   word.insertWord(in);
@@ -48,7 +48,7 @@ void HashTable::insert(std::istream& in)
   }
 }
 
-void HashTable::search(std::istream& in, std::ostream& out)
+void Dictionary::search(std::istream& in, std::ostream& out)
 {
   std::string englishWord;
   do
@@ -72,7 +72,7 @@ void HashTable::search(std::istream& in, std::ostream& out)
   }
 }
 
-void HashTable::deleteWord(std::istream& in)
+void Dictionary::deleteWord(std::istream& in)
 {
   std::string englishWord;
   do
@@ -92,7 +92,7 @@ void HashTable::deleteWord(std::istream& in)
   }
 }
 
-void HashTable::show(std::istream& in, std::ostream& out)
+void Dictionary::show(std::istream& in, std::ostream& out)
 {
   std::string englishWord;
   do 
