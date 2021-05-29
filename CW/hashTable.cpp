@@ -1,0 +1,106 @@
+#include "hashTable.hpp"
+#include <string>
+
+#include "word.h"
+#include "tools.h"
+
+inline int HashTable::getHash(const std::string& englishWord)
+{
+  int hash = 0;
+  for (size_t i = 0; i < englishWord.length(); i++)
+  {
+    hash += englishWord[i];
+  }
+  hash = hash % tableSize_;
+  return hash;
+}
+
+HashTable::HashTable(size_t size):
+  tableSize_(size),
+  numOfCollsions_(0)
+{
+  for (int i = 0; i < size; i++)
+  {
+    array_.push_back(DoubleLinkedList< Word >());
+  }
+}
+
+void HashTable::insert(std::istream& in)
+{
+  Word word;
+  word.insertWord(in);
+  int index = getHash(word.getEnglishWord());
+  if (!array_[index].empty())
+  {
+    if (array_[index].searchItem(word))
+    {
+      mergeVectors(array_[index].searchItem(word)->item_.getVect(), word.getVect());
+    }
+    else
+    {
+      numOfCollsions_++;
+      array_[index].insertHead(word);
+    }
+    return;
+  }
+  else
+  {
+    array_[index].insertHead(word);
+  }
+}
+
+void HashTable::search(std::istream& in)
+{
+  std::string englishWord;
+  in.ignore(100, '\n');
+  getline(in, englishWord);
+  if (!in)
+  {
+    return;
+  }
+  Word engWord(englishWord);
+  int index = getHash(englishWord);
+  
+  if (array_[index].searchItem(engWord))// O(n)
+  {
+    std::cout << "Dictionary contains this word\n";
+  }
+  else
+  {
+    std::cout << "Dictionary does not contain this word\n";
+  }
+}
+
+void HashTable::deleteWord(std::istream& in)
+{
+  std::string englishWord;
+  in >> englishWord;
+  int index = getHash(englishWord);
+  Word engWord(englishWord);
+ 
+  if (array_[index].searchItem(engWord))
+  {
+    array_[index].searchItem(engWord)->item_.clear();
+  }
+  else
+  {
+    throw std::runtime_error("Dictionary does not contains this word\n");
+  }
+}
+
+void HashTable::show(std::istream& in)
+{
+  std::string englishWord;
+  in.ignore(100, '\n');
+  getline(in, englishWord);
+  Word engWord(englishWord);
+  int index = getHash(englishWord);
+  if (array_[index].searchItem(engWord))
+  {
+    array_[index].searchItem(engWord)->item_.show();
+  }
+  else
+  {
+    throw std::runtime_error("Dictionary does not contain this word\n");
+  }
+}
