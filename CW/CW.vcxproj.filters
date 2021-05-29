@@ -18,7 +18,7 @@
     <ClCompile Include="main.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
-    <ClCompile Include="dictonary.cpp">
+    <ClCompile Include="dictionary.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="DoubleLinkedList.cpp">

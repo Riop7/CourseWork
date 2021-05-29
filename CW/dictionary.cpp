@@ -19,7 +19,7 @@ Dictionary::Dictionary(size_t size):
   tableSize_(size),
   numOfCollsions_(0)
 {
-  for (int i = 0; i < size; i++)
+  for (size_t i = 0; i < size; i++)
   {
     array_.push_back(DoubleLinkedList< Word >());
   }

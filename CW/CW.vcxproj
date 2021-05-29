@@ -139,7 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="dictonary.cpp" />
+    <ClCompile Include="dictionary.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="DoubleLinkedList.cpp" />
     <ClCompile Include="tools.cpp" />
