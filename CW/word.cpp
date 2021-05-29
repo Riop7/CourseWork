@@ -21,7 +21,11 @@ void Word::insertWord(std::istream& in)
   do
   {
     getline(in, line);
-  } while (line.empty());
+  } while (line.empty() && !in.eof());
+  if (line.empty() && !in.eof())
+  {
+    throw std::invalid_argument("Empty input");
+  }
   std::stringstream sin(line);
   char my_or = '\0';
   char semicolon = '\0';
@@ -50,7 +54,7 @@ void Word::insertWord(std::istream& in)
     std::string translation;
     sin >> std::ws;
     current = sin.get();
-    while ((current != '|' && current != ';') && !sin.fail())
+    while (!sin.fail() && current != '|' && current != ';')
     {
       translation += current;
       current = sin.get();
@@ -63,18 +67,16 @@ void Word::insertWord(std::istream& in)
     {
       flag = false;
     }
-    //sin >> translation;
     doStandartString(translation);
-    if (translation.empty())
-    {
-      throw std::invalid_argument("Invalid translation\n");
-    }
     myToLower(translation);
     if (!checkWordIsCorrect(translation))
     {
       throw std::invalid_argument("Invalid translation\n");
     }
-    translations_.push_back(translation);
+    //if (std::find(translations_.begin(), translations_.end(), translation) == translations_.end())
+    {
+       translations_.push_back(translation);
+    }
   }
   std::sort(translations_.begin(), translations_.end());
 }
