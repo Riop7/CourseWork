@@ -107,18 +107,3 @@ bool Word::operator!=(const Word& rhs)
 {
   return englishWord_ != rhs.englishWord_;
 }
-
-void myToLower(std::string& str)
-{
-  for (size_t i = 0; i < str.length(); i++)
-  {
-    if (str[i] >= 'A' && str[i] <= 'Z')
-    {
-      str[i] += 'z' - 'Z';
-    }
-    if (str[i] >= 'À' && str[i] <= 'ß')
-    {
-      str[i] += 'ÿ' - 'ß';
-    }
-  }
-}

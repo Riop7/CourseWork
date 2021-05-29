@@ -64,11 +64,11 @@ void Dictionary::search(std::istream& in, std::ostream& out)
   
   if (array_[index].searchItem(engWord))// O(n)
   {
-    std::cout << "Dictionary contains this word\n";
+    out << "Dictionary contains this word\n";
   }
   else
   {
-    std::cout << "Dictionary does not contain this word\n";
+    out << "Dictionary does not contain this word\n";
   }
 }
 

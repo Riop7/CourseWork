@@ -6,5 +6,6 @@
 bool checkWordIsCorrect(const std::string& word);
 void mergeVectors(std::vector< std::string >& v1, std::vector< std::string >& v2);
 void doStandartString(std::string& str);
+void myToLower(std::string& str);
 
 #endif
