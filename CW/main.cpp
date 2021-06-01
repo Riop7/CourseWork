@@ -68,7 +68,7 @@ int main()
       }
       else
       {
-        throw std::invalid_argument("Wrong command number\n");
+        std::cout << "Try one more time\n";
       }
     }
   }
