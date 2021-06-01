@@ -3,7 +3,7 @@
 
 #include <string>
 #include <iosfwd>
-#include "word.h"
+#include "word.hpp"
 #include "DoubleLinkedList.hpp"
 
 class Dictionary

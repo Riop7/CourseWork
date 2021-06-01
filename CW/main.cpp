@@ -3,7 +3,7 @@
 #include <fstream>
 
 #include "DoubleLinkedList.hpp"
-#include "word.h"
+#include "word.hpp"
 #include "dictionary.hpp"
 
 int main()

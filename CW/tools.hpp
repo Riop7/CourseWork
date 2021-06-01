@@ -3,7 +3,8 @@
 #include <string>
 #include <vector>
 
-bool checkWordIsCorrect(const std::string& word);
+bool checkRussianWordIsCorrect(const std::string& word);
+bool checkEnglishWordIsCorrect(const std::string& word);
 void mergeVectors(std::vector< std::string >& v1, std::vector< std::string >& v2);
 void doStandartString(std::string& str);
 void myToLower(std::string& str);

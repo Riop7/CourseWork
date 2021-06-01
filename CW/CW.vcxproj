@@ -148,8 +148,8 @@
   <ItemGroup>
     <ClInclude Include="dictionary.hpp" />
     <ClInclude Include="DoubleLinkedList.hpp" />
-    <ClInclude Include="tools.h" />
-    <ClInclude Include="word.h" />
+    <ClInclude Include="tools.hpp" />
+    <ClInclude Include="word.hpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="input.txt" />

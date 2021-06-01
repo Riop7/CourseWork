@@ -1,10 +1,10 @@
-#include "word.h"
+#include "word.hpp"
 #include <iostream>
 #include <string>
 #include <sstream>
 #include <algorithm>
 #include <iterator>
-#include "tools.h"
+#include "tools.hpp"
 
 Word::Word():
   englishWord_("<EMPTY>")
@@ -42,7 +42,7 @@ void Word::insertWord(std::istream& in)
   }
   myToLower(englishWord_);
   doStandartString(englishWord_);
-  if (!checkWordIsCorrect(englishWord_))
+  if (!checkEnglishWordIsCorrect(englishWord_))
   {
     throw std::invalid_argument("Invalid english word\n");
   }
@@ -68,7 +68,7 @@ void Word::insertWord(std::istream& in)
     }
     doStandartString(translation);
     myToLower(translation);
-    if (!checkWordIsCorrect(translation))
+    if (!checkRussianWordIsCorrect(translation))
     {
       throw std::invalid_argument("Invalid translation\n");
     }

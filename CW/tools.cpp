@@ -1,14 +1,24 @@
-#include "tools.h"
+#include "tools.hpp"
 #include <locale>
 #include <algorithm>
 
-bool checkWordIsCorrect(const std::string& word)
+bool checkRussianWordIsCorrect(const std::string& word)
 {
   for (size_t i = 0; i < word.length(); i++)
   {
-    std::locale locRu("ru-RU");
-    std::locale locUS("en-US");
-    if (!std::isalpha(word[i], locRu) && !std::isalpha(word[i], locUS) && !std::isspace(word[i]))
+    if ((word[i] < 'à' || word[i] > 'ÿ') && !std::isspace(word[i]))
+    {
+      return false;
+    }
+  }
+  return true;
+}
+
+bool checkEnglishWordIsCorrect(const std::string& word)
+{
+  for (size_t i = 0; i < word.length(); i++)
+  {
+    if (!std::isalpha(word[i]) && !std::isspace(word[i]))
     {
       return false;
     }

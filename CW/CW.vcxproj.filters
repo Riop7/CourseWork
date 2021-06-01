@@ -38,10 +38,10 @@
     <ClInclude Include="DoubleLinkedList.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="word.h">
+    <ClInclude Include="word.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="tools.h">
+    <ClInclude Include="tools.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,8 +1,8 @@
 #include "dictionary.hpp"
 #include <string>
 
-#include "word.h"
-#include "tools.h"
+#include "word.hpp"
+#include "tools.hpp"
 
 inline int Dictionary::getHash(const std::string& englishWord)
 {
