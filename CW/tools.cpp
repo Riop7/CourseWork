@@ -1,6 +1,7 @@
 #include "tools.hpp"
 #include <locale>
 #include <algorithm>
+#include <stack>
 
 bool checkRussianWordIsCorrect(const std::string& word)
 {
@@ -29,7 +30,7 @@ bool checkEnglishWordIsCorrect(const std::string& word)
 void mergeVectors(std::vector<std::string>& v1, std::vector<std::string>& v2)
 {
   v1.insert(v1.end(), v2.begin(), v2.end());
-  std::sort(v1.begin(), v1.end());
+  shakerSort(std::addressof(v1[0]), v1.size());
   v1.erase(std::unique(v1.begin(), v1.end()), v1.end());
 }
 
